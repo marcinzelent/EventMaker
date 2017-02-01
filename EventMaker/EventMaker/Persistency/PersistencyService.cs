@@ -20,20 +20,21 @@ namespace EventMaker.Persistency
         private static StorageFile eventsFile;
         public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
         {
-            eventsFile = await localFolder.CreateFileAsync("events.json");
+            eventsFile = await localFolder.CreateFileAsync("events.json",CreationCollisionOption.OpenIfExists);
             File.WriteAllText(eventsFile.Path, JsonConvert.SerializeObject(events));
         }
-        public static async Task<List<Event>> LoadEventsFromJsonAsync()
+        public static async Task<ObservableCollection<Event>> LoadEventsFromJsonAsync()
         {
-            StorageFile eventsFile = await localFolder.GetFileAsync("events")
+            try
+            {
+                eventsFile = await localFolder.GetFileAsync("events.json");
+            }
+            catch(FileNotFoundException)
+            {
+                eventsFile = await localFolder.CreateFileAsync("events.json", CreationCollisionOption.OpenIfExists);
+            }
+            return JsonConvert.DeserializeObject<ObservableCollection<Event>>(File.ReadAllText(eventsFile.Path));
         }
-        public static async void SerializeEventsFileAsync(string eventsString, string filename)
-        {
-
-        }
-        public static async Task<string> DeserializeEventsFileAsync(string fileName)
-        {
-
-        }
+        
     }
 }

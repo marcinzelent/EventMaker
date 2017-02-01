@@ -102,6 +102,7 @@
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventCatalogSingleton.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\EventViewModel.cs" />
     <Compile Include="View\CreateEventPage.xaml.cs">
       <DependentUpon>CreateEventPage.xaml</DependentUpon>

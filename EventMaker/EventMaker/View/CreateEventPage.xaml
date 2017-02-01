@@ -5,9 +5,42 @@
     xmlns:local="using:EventMaker"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:EventMaker.ViewModel"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <viewModel:EventViewModel/>
+    </Page.DataContext>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" FontSize="90" Text="Add Event" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Height="32" TextAlignment="Right" Text="Id" FontWeight="Bold"  />
+                <TextBlock Height="32" TextAlignment="Right" Text="Name" FontWeight="Bold" />
+                <TextBlock Height="32" TextAlignment="Right" Text="Description" FontWeight="Bold" />
+                <TextBlock Height="32" TextAlignment="Right" Text="Place" FontWeight="Bold" />
+                <TextBlock Height="32" TextAlignment="Right" Text="Date" FontWeight="Bold" />
+                <TextBlock Height="32" TextAlignment="Right" Text="Time" FontWeight="Bold" />
+            </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+            <TextBox PlaceholderText="0" Text="{Binding Id, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Jeppe" Text="{Binding Name,Mode=TwoWay}" />
+            <TextBox PlaceholderText="Event Description" Text="{Binding Description,Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Place" Text="{Binding Place,Mode=TwoWay}"/>
+            <CalendarDatePicker Date="{Binding Date,Mode=TwoWay}"/>
+            <TimePicker Time="{Binding Time,Mode=TwoWay}"/>
+            <Button Height="32" Width="60" Content="Add" Command="{Binding CreateEventCommand}" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
-</Page>
+
+</Page>                                                             

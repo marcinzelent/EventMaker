@@ -1,13 +1,39 @@
 ﻿<Page
-    x:Class="EventMaker.EventPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:EventMaker"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:EventMaker.ViewModel"
+    x:Class="EventMaker.EventPage"
     mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Add" Label="Add Event" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Delete" Label="Delete Event" Command="{Binding DeleteEventCommand}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Page.DataContext>
+        <ViewModel:EventViewModel/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ListView ItemsSource="{Binding EventCatalogSingleton.Events}" SelectedIndex="{Binding SelectedEventIndex,Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Description}"/>
+                        <TextBlock Text="{Binding DateTime}"/>
+                        <TextBlock Text="{Binding Place}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

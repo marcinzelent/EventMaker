@@ -1,14 +1,16 @@
 ﻿using System.Collections.ObjectModel;
+using System;
 
 namespace EventMaker.Model
 {
-    class EventCatalogSingleton
+    public class EventCatalogSingleton
     {
         private static EventCatalogSingleton instance;
-        ObservableCollection<Event> Events;
+        private ObservableCollection<Event> _events;
         private EventCatalogSingleton()
         {
-            Events = new ObservableCollection<Event>();
+            _events = new ObservableCollection<Event>();
+            LoadEventsAsync();
         }
         public static EventCatalogSingleton Instance
         {
@@ -24,14 +26,21 @@ namespace EventMaker.Model
         public void Add(Event newEvent)
         {
             Events.Add(newEvent);
+            Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
         }
         public async void LoadEventsAsync()
         {
-
+            Events = await Persistency.PersistencyService.LoadEventsFromJsonAsync();
         }
         public void Remove(Event eventToBeRemoved)
         {
             Events.Remove(eventToBeRemoved);
+            Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
+        }
+        public ObservableCollection<Event> Events
+        {
+            get { return _events; }
+            set { _events = value; }
         }
     }
 }
