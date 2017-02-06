@@ -8,7 +8,6 @@ namespace EventMaker.Model
 
         private EventCatalogSingleton()
         {
-            Events = new ObservableCollection<Event>();
             LoadEventsAsync();
         }
         public static EventCatalogSingleton Instance
@@ -29,7 +28,7 @@ namespace EventMaker.Model
         }
         public async void LoadEventsAsync()
         {
-            Events = await Persistency.PersistencyService.LoadEventsFromJsonAsync();
+            Events = await Persistency.PersistencyService.LoadEventsFromJsonAsync() ?? new ObservableCollection<Event>();
         }
         public void Remove(Event eventToBeRemoved)
         {

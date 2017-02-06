@@ -68,7 +68,7 @@ namespace EventMaker.ViewModel
         {
             EventCatalogSingleton = EventCatalogSingleton.Instance;
             EventHandler = new Handler.EventHandler(this);
-            CreateEventCommand = 
+            CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
             DeleteEventCommand = new RelayCommand(EventHandler.DeleteEvent);
             DateTime dt = DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());

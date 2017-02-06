@@ -1,7 +1,9 @@
 ﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -34,6 +36,13 @@ namespace EventMaker
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 DebugSettings.EnableFrameRateCounter = true;
+            }
+
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            if (titleBar != null)
+            {
+                titleBar.BackgroundColor = Color.FromArgb(255,16,110,190);
+                titleBar.ButtonBackgroundColor = Color.FromArgb(255, 16, 110, 190);
             }
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
