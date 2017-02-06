@@ -10,32 +10,16 @@ namespace EventMaker.ViewModel
 {
     public class EventViewModel : INotifyPropertyChanged
     {
-        private EventCatalogSingleton _eventCatalogSingleton;
         public Handler.EventHandler EventHandler { get; set; }
-        private ICommand _createEventCommand;
-        private ICommand _deleteEventCommand;
         public static int SelectedEventIndex { get; set; }
         private int _id;
         private string _name, _place, _description;
         private DateTimeOffset _date;
         private TimeSpan _time;
-        public EventCatalogSingleton EventCatalogSingleton
-        {
-            get { return _eventCatalogSingleton; }
-            set { _eventCatalogSingleton = value; }
-        }
+        public EventCatalogSingleton EventCatalogSingleton { get; set; }
+        public ICommand CreateEventCommand { get; set; }
+        public ICommand DeleteEventCommand { get; set; }
 
-        public ICommand CreateEventCommand
-        {
-            get { return _createEventCommand; }
-            set { _createEventCommand = value; }
-        }
-
-        public ICommand DeleteEventCommand
-        {
-            get { return _deleteEventCommand; }
-            set { _deleteEventCommand = value; }
-        }
         public int Id
         {
             get { return _id; }
@@ -82,10 +66,10 @@ namespace EventMaker.ViewModel
         }
         public EventViewModel()
         {
-            _eventCatalogSingleton = EventCatalogSingleton.Instance;
+            EventCatalogSingleton = EventCatalogSingleton.Instance;
             EventHandler = new Handler.EventHandler(this);
-            _createEventCommand=new RelayCommand(EventHandler.CreateEvent);
-            _deleteEventCommand = new RelayCommand(EventHandler.DeleteEvent);
+            CreateEventCommand = 
+            DeleteEventCommand = new RelayCommand(EventHandler.DeleteEvent);
             DateTime dt = DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);

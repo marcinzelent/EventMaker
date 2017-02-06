@@ -1,5 +1,4 @@
-﻿using EventMaker.Annotations;
-using EventMaker.Model;
+﻿using EventMaker.Model;
 using EventMaker.ViewModel;
 
 namespace EventMaker.Handler
