@@ -26,6 +26,7 @@ namespace EventMaker.Handler
         public void DeleteEvent()
         {
             EventViewModel.EventCatalogSingleton.Remove(EventViewModel.EventCatalogSingleton.Events[EventViewModel.SelectedEventIndex]);
+            EventViewModel.SelectedEventIndex = 0;
         }
     }
 }

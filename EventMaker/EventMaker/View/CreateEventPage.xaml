@@ -165,13 +165,7 @@
                 <TimePicker Time="{Binding Time,Mode=TwoWay}" Margin="10,0,10,10" Style="{StaticResource TimePickerStyle1}"/>
             </StackPanel>
             <TextBox PlaceholderText="Place" Text="{Binding Place,Mode=TwoWay}"/>
-            <Button Height="32" Width="84" Content="Add" Command="{Binding CreateEventCommand}" HorizontalAlignment="Right" Margin="0,0,10,0" Background="#FF106EBE" Foreground="White">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="EventMaker.View.EventPage"/>
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </Button>
+            <Button Height="32" Width="84" Content="Add" Command="{Binding CreateEventCommand}" HorizontalAlignment="Right" Margin="0,0,10,0" Background="#FF106EBE" Foreground="White" Click="GoToEventPage"/>
         </StackPanel>
     </Grid>
 

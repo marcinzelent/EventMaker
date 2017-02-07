@@ -41,7 +41,7 @@ namespace EventMaker
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
             {
-                titleBar.BackgroundColor = Color.FromArgb(255,16,110,190);
+                titleBar.BackgroundColor = Color.FromArgb(255, 16, 110, 190);
                 titleBar.ButtonBackgroundColor = Color.FromArgb(255, 16, 110, 190);
             }
 #endif
@@ -55,7 +55,6 @@ namespace EventMaker
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-                rootFrame.Navigated += OnNavigated;
 
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -66,28 +65,18 @@ namespace EventMaker
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
 
-                // Register a handler for BackRequested events and set the
-                // visibility of the Back button
-                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
-
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                    rootFrame.CanGoBack ?
-                    AppViewBackButtonVisibility.Visible :
-                    AppViewBackButtonVisibility.Collapsed;
-
-            }
-
-            if (e.PrelaunchActivated == false)
-            {
-                if (rootFrame.Content == null)
+                if (e.PrelaunchActivated == false)
                 {
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigation
-                    // parameter
-                    rootFrame.Navigate(typeof(View.EventPage), e.Arguments);
+                    if (rootFrame.Content == null)
+                    {
+                        // When the navigation stack isn't restored navigate to the first page,
+                        // configuring the new page by passing required information as a navigation
+                        // parameter
+                        rootFrame.Navigate(typeof(View.EventPage), e.Arguments);
+                    }
+                    // Ensure the current window is active
+                    Window.Current.Activate();
                 }
-                // Ensure the current window is active
-                Window.Current.Activate();
             }
         }
 
@@ -123,17 +112,6 @@ namespace EventMaker
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
-        }
-
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            if (rootFrame.CanGoBack)
-            {
-                e.Handled = true;
-                rootFrame.GoBack();
-            }
         }
 
     }
