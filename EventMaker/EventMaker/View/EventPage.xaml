@@ -94,7 +94,7 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton Icon="Add" Label="Add Event">
+            <AppBarButton Icon="Add" Label="Add Event" Command="{Binding CleanTemplateCommand}">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="EventMaker.View.CreateEventPage"/>

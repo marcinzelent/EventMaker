@@ -11,7 +11,7 @@ namespace EventMaker.ViewModel
     public class EventViewModel : INotifyPropertyChanged
     {
         private static Event _eventTemplate = new Event();
-        public EventCatalogSingleton EventCatalogSingleton { get; set; }
+        public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
         public static int SelectedEventIndex { get; set; }
         public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
         public static TimeSpan Time { get; set; }
@@ -19,6 +19,7 @@ namespace EventMaker.ViewModel
         public ICommand DeleteEventCommand { get; set; }
         public ICommand LoadEventCommand { get; set; }
         public ICommand UpdateEventCommand { get; set; }
+        public ICommand CleanTemplateCommand { get; set; }
 
         public Event EventTemplate
         {
@@ -32,19 +33,18 @@ namespace EventMaker.ViewModel
 
         public EventViewModel()
         {
-            EventCatalogSingleton = EventCatalogSingleton.Instance;
             CreateEventCommand = new RelayCommand(CreateEvent);
             DeleteEventCommand = new RelayCommand(DeleteEvent);
             LoadEventCommand = new RelayCommand(LoadEvent);
             UpdateEventCommand = new RelayCommand(UpdateEvent);
+            CleanTemplateCommand = new RelayCommand(CleanTemplate);
         }
 
         private void CreateEvent()
         {
             EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
             EventCatalogSingleton.Add(EventTemplate);
-            EventTemplate=new Event();
-            Date=DateTimeOffset.Now;
+            CleanTemplate();
         }
 
         private void DeleteEvent()
@@ -63,8 +63,14 @@ namespace EventMaker.ViewModel
         {
             EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
             EventCatalogSingleton.Update(SelectedEventIndex,EventTemplate);
-            EventTemplate=new Event();
+            CleanTemplate();
+        }
+
+        private void CleanTemplate()
+        {
+            EventTemplate = new Event();
             Date = DateTimeOffset.Now;
+            Time = TimeSpan.Zero;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
