@@ -8,6 +8,87 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="EventMaker.View.EventPage"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <ControlTemplate x:Key="DeleteButtonStyle" TargetType="Button">
+            <Grid x:Name="RootGrid" Background="Transparent">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <Storyboard>
+                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" 
+                                                               Storyboard.TargetProperty="Background">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPointerOver}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
+                                                               Storyboard.TargetProperty="Foreground">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" 
+                                                               Storyboard.TargetProperty="Background">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundPressed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
+                                                               Storyboard.TargetProperty="BorderBrush">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
+                                                               Storyboard.TargetProperty="Foreground">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" 
+                                                               Storyboard.TargetProperty="Background">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBackgroundDisabled}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
+                                                               Storyboard.TargetProperty="BorderBrush">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
+                                                               Storyboard.TargetProperty="Foreground">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter x:Name="ContentPresenter"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Padding="10"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    AutomationProperties.AccessibilityView="Raw" />
+            </Grid>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Page.DataContext>
+        <viewModel:EventViewModel/>
+    </Page.DataContext>
+
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.Content>
@@ -20,24 +101,71 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </AppBarButton>
-            <AppBarButton Icon="Delete" Label="Delete Event" Command="{Binding DeleteEventCommand}"/>
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Page.DataContext>
-        <viewModel:EventViewModel/>
-    </Page.DataContext>
+    <Grid Background="#E9EBEE">
+        <ListView x:Name="EventsList" ItemsSource="{Binding EventCatalogSingleton.Events}" 
+                  SelectedIndex="{Binding SelectedEventIndex, Mode=TwoWay}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="EventsList" ItemsSource="{Binding EventCatalogSingleton.Events}" SelectedIndex="{Binding SelectedEventIndex, Mode=TwoWay}">
+            <ListView.ItemContainerStyle>
+                <Style BasedOn="{StaticResource EventsListViewItem}" TargetType="ListViewItem"/>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
+
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="18"/>
-                        <TextBlock Text="{Binding Description}" FontStyle="Italic"/>
-                        <TextBlock Text="{Binding DateTime}"/>
-                        <TextBlock Text="{Binding Place}"/>
-                    </StackPanel>
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Background="#FF106EBE" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50px"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Padding="10">
+                                <StackPanel.Resources>
+                                    <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock"/>
+                                </StackPanel.Resources>
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="24" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding DateTime}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Place}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <Button DataContext="{Binding ElementName=EventsList, Path=DataContext}"  
+                                    Command="{Binding DeleteEventCommand}" 
+                                    Template="{StaticResource DeleteButtonStyle}"
+                                    Grid.Column="1" 
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    Click="SelectEvent">
+                                <SymbolIcon Symbol="Clear" Foreground="White" ToolTipService.ToolTip="Delete"/>
+                            </Button>
+                            <Button DataContext="{Binding ElementName=EventsList, Path=DataContext}"  
+                                    Command="{Binding LoadEventCommand}" 
+                                    Template="{StaticResource DeleteButtonStyle}"
+                                    Grid.Column="1"
+                                    Margin="0,44,0,0" 
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    Click="SelectEvent">
+                                <SymbolIcon Symbol="Edit" Foreground="White" ToolTipService.ToolTip="Edit"/>
+
+                                <interactivity:Interaction.Behaviors>
+                                    <core:EventTriggerBehavior EventName="Click">
+                                        <core:NavigateToPageAction TargetPage="EventMaker.View.EditEventPage"/>
+                                    </core:EventTriggerBehavior>
+                                </interactivity:Interaction.Behaviors>
+                                
+                            </Button>
+                        </Grid>
+                        <TextBlock Grid.Row="1" 
+                                   Text="{Binding Description}" 
+                                   TextWrapping="Wrap" 
+                                   Foreground="Black" 
+                                   Padding="10"/>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

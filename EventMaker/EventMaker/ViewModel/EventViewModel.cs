@@ -1,7 +1,7 @@
 ﻿using System;
-using EventMaker.Model;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using EventMaker.Model;
 using System.Windows.Input;
 using EventMaker.Annotations;
 using EventMaker.Common;
@@ -10,71 +10,62 @@ namespace EventMaker.ViewModel
 {
     public class EventViewModel : INotifyPropertyChanged
     {
-        public Handler.EventHandler EventHandler { get; set; }
-        public static int SelectedEventIndex { get; set; }
-        private int _id;
-        private string _name, _place, _description;
-        private DateTimeOffset _date;
-        private TimeSpan _time;
+        private static Event _eventTemplate = new Event();
         public EventCatalogSingleton EventCatalogSingleton { get; set; }
+        public static int SelectedEventIndex { get; set; }
+        public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
+        public static TimeSpan Time { get; set; }
         public ICommand CreateEventCommand { get; set; }
         public ICommand DeleteEventCommand { get; set; }
+        public ICommand LoadEventCommand { get; set; }
+        public ICommand UpdateEventCommand { get; set; }
 
-        public int Id
+        public Event EventTemplate
         {
-            get { return _id; }
+            get { return _eventTemplate; }
             set
             {
-                _id = value; 
-                OnPropertyChanged(nameof(Id));
+                _eventTemplate = value;
+                OnPropertyChanged(nameof(EventTemplate));
             }
         }
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
-        public string Place
-        {
-            get { return _place; }
-            set { _place = value;
-                OnPropertyChanged(nameof(Place));
-            }
-        }
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value;
-                OnPropertyChanged(nameof(Description));
-            }
-        }
-        public DateTimeOffset Date
-        {
-            get { return _date; }
-            set { _date = value;
-                OnPropertyChanged(nameof(Date));
-            }
-        }
-        public TimeSpan Time
-        {
-            get { return _time; }
-            set { _time = value;
-                OnPropertyChanged(nameof(Time));
-            }
-        }
+
         public EventViewModel()
         {
             EventCatalogSingleton = EventCatalogSingleton.Instance;
-            EventHandler = new Handler.EventHandler(this);
-            CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
-            DeleteEventCommand = new RelayCommand(EventHandler.DeleteEvent);
-            DateTime dt = DateTime.Now;
-            _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            CreateEventCommand = new RelayCommand(CreateEvent);
+            DeleteEventCommand = new RelayCommand(DeleteEvent);
+            LoadEventCommand = new RelayCommand(LoadEvent);
+            UpdateEventCommand = new RelayCommand(UpdateEvent);
         }
 
+        private void CreateEvent()
+        {
+            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
+            EventCatalogSingleton.Add(EventTemplate);
+            EventTemplate=new Event();
+            Date=DateTimeOffset.Now;
+        }
+
+        private void DeleteEvent()
+        {
+            EventCatalogSingleton.Remove(SelectedEventIndex);
+        }
+
+        private void LoadEvent()
+        {
+            EventTemplate = EventCatalogSingleton.Events[SelectedEventIndex];
+            Date = new DateTimeOffset(EventTemplate.DateTime);
+            Time = new TimeSpan(EventTemplate.DateTime.Ticks);
+        }
+
+        private void UpdateEvent()
+        {
+            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
+            EventCatalogSingleton.Update(SelectedEventIndex,EventTemplate);
+            EventTemplate=new Event();
+            Date = DateTimeOffset.Now;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

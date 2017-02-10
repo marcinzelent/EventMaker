@@ -95,10 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Converter\DateTimeConverter.cs" />
-    <Compile Include="Handler\EventHandler.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventCatalogSingleton.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
@@ -106,6 +103,12 @@
     <Compile Include="ViewModel\EventViewModel.cs" />
     <Compile Include="View\CreateEventPage.xaml.cs">
       <DependentUpon>CreateEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditEventPage.xaml.cs">
+      <DependentUpon>EditEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EventItem.xaml.cs">
+      <DependentUpon>EventItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
@@ -134,6 +137,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\CreateEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EventItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

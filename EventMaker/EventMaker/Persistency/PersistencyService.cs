@@ -12,11 +12,13 @@ namespace EventMaker.Persistency
     {
         private static readonly StorageFolder LocalFolder = ApplicationData.Current.LocalFolder;
         private static StorageFile _eventsFile;
+
         public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
         {
             _eventsFile = await LocalFolder.CreateFileAsync("events.json",CreationCollisionOption.OpenIfExists);
             File.WriteAllText(_eventsFile.Path, JsonConvert.SerializeObject(events));
         }
+
         public static async Task<ObservableCollection<Event>> LoadEventsFromJsonAsync()
         {
             try

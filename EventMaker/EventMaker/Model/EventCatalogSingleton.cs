@@ -30,9 +30,14 @@ namespace EventMaker.Model
         {
             Events = await Persistency.PersistencyService.LoadEventsFromJsonAsync() ?? new ObservableCollection<Event>();
         }
-        public void Remove(Event eventToBeRemoved)
+        public void Remove(int index)
         {
-            Events.Remove(eventToBeRemoved);
+            Events.RemoveAt(index);
+            Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
+        }
+        public void Update(int index, Event eventToUpdate)
+        {
+            Events[index] = eventToUpdate;
             Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
         }
         public ObservableCollection<Event> Events { get; set; }
