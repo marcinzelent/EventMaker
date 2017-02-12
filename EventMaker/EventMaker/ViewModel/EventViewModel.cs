@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EventMaker.Model;
@@ -11,8 +12,10 @@ namespace EventMaker.ViewModel
     public class EventViewModel : INotifyPropertyChanged
     {
         private static Event _eventTemplate = new Event();
+        private static string _selectedSortValue = "date added";
         public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
         public static int SelectedEventIndex { get; set; }
+        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() {"name","date","place","date added"};
         public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
         public static TimeSpan Time { get; set; }
         public ICommand CreateEventCommand { get; set; }
@@ -28,6 +31,17 @@ namespace EventMaker.ViewModel
             {
                 _eventTemplate = value;
                 OnPropertyChanged(nameof(EventTemplate));
+            }
+        }
+
+        public string SelectedSortValue
+        {
+            get { return _selectedSortValue; }
+            set
+            {
+                _selectedSortValue = value;
+                OnPropertyChanged(nameof(SelectedSortValue));
+                SortEvents();
             }
         }
 
@@ -71,6 +85,11 @@ namespace EventMaker.ViewModel
             EventTemplate = new Event();
             Date = DateTimeOffset.Now;
             Time = TimeSpan.Zero;
+        }
+
+        private void SortEvents()
+        {
+            EventCatalogSingleton.Events.Move(0, 1);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

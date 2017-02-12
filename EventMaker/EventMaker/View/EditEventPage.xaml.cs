@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Core;
+using Windows.UI.Xaml;
 
 namespace EventMaker.View
 {
@@ -17,7 +18,7 @@ namespace EventMaker.View
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
         }
 
-        private void GoToEventPage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void GoToEventPage(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(EventPage));
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
