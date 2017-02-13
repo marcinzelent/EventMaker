@@ -12,10 +12,10 @@ namespace EventMaker.ViewModel
     public class EventViewModel : INotifyPropertyChanged
     {
         private static Event _eventTemplate = new Event();
-        private static string _selectedSortValue = "date added";
+        private static string _selectedSortValue = "date (ascending)";
         public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
         public static int SelectedEventIndex { get; set; }
-        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() {"name","date","place","date added"};
+        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() {"date (ascending)","date (descending)"/*, "name (ascending)","name (descending)" ,"place (ascending)", "place (descending)"*/ };
         public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
         public static TimeSpan Time { get; set; }
         public ICommand CreateEventCommand { get; set; }
@@ -59,6 +59,7 @@ namespace EventMaker.ViewModel
             EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
             EventCatalogSingleton.Add(EventTemplate);
             CleanTemplate();
+            SortEvents();
         }
 
         private void DeleteEvent()
@@ -89,7 +90,8 @@ namespace EventMaker.ViewModel
 
         private void SortEvents()
         {
-            EventCatalogSingleton.Events.Move(0, 1);
+            EventCatalogSingleton.Sort(SelectedSortValue);
+            OnPropertyChanged(nameof(EventCatalogSingleton));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

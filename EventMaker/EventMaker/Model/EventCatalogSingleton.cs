@@ -1,4 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace EventMaker.Model
 {
@@ -40,6 +44,105 @@ namespace EventMaker.Model
             Events[index] = eventToUpdate;
             Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
         }
+
+        public void Sort(string sortValue)
+        {
+            bool sorted;
+            switch (sortValue)
+            {
+                case "date (ascending)":
+                do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (Events[i].DateTime > Events[i + 1].DateTime)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+                case "date (descending)":
+                    do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (Events[i].DateTime < Events[i + 1].DateTime)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+
+                case "name (ascending)":
+                    do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) == 1)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+
+                case "name (descending)":
+                    do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) == -1)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+
+                case "place (ascending)":
+                    do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) == 1)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+
+                case "place (descending)":
+                    do
+                    {
+                        sorted = false;
+                        for (int i = 0; i < Events.Count - 1; i++)
+                        {
+                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) == -1)
+                            {
+                                Events.Move(i, i + 1);
+                                sorted = true;
+                            }
+                        }
+                    } while (sorted);
+                    break;
+            }
+
+        }
+
+
         public ObservableCollection<Event> Events { get; set; }
     }
 }
