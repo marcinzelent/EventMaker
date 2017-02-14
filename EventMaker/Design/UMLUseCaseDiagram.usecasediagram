@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bab289a7-8f10-419e-a8ab-cd204a7e9959" name="UMLUseCaseDiagram" linkedPackageId="1a04c5a4-683a-4356-91c3-055ae8aec645" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="d591e90a-e9a7-4039-a147-987125e2c92b">
+      <elementDefinition Id="9293df92-f883-40a3-8fbc-74bbca8dc44d" />
+      <body>Add event:
+User opens app, presses add button, fills all fields and saves event.</body>
+    </comment>
+    <comment Id="562a957e-f230-4e5b-b06a-41f28dcf660c">
+      <elementDefinition Id="5db3d44c-773e-4d00-b247-8bf178308783" />
+      <body>Remove event:
+User opens app and presses delete button on the chosen event.</body>
+    </comment>
+    <comment Id="18d57b2f-0936-4ac9-abc6-b96f26985a8c">
+      <elementDefinition Id="701e8cb2-0312-409c-8da7-ae473db4854d" />
+      <body>Edit event:
+User opens app, presses edit button on the chosen event, changes information and saves.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="eafa6a70-c3d6-4d80-aeca-159f9cd46168">
+      <profileInstance Id="81ed0536-367a-4947-8ed2-9ffce8367747" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f55a1ff2-aedc-41d4-9ad7-b12fe2588f65">
+      <profileInstance Id="a75660a7-8058-410e-addc-e09d05c2cef6" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="9b5803ff-a4f5-4c2b-86c0-b1afc25bf515" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fcf7dc08-dda0-4c1f-b9ad-e2c956165ec9" />
+        <targetEnds>
+          <association Id="ab052909-9799-4f47-ae13-33de2c13bf36" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Add event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b699158a-d41f-492e-a051-636e7b5c3ea6" LastKnownName="Add event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ffdabbfc-aa79-45d3-a36d-6b590347505a" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="24793798-8293-44fc-9008-ec4dae3f15de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5c77693-fba3-4bb3-9315-62369fd92ce2" name="Add event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="98c4d5a2-b53a-4d19-91fb-e9aa00587de8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="63cd088f-5871-4f32-8958-eb2ebac370e0" />
+          </association>
+          <association Id="58f08717-ffe3-4bd3-97f8-03f938bd8633" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Remove event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="22a589e9-562e-437a-830b-bf1771947133" LastKnownName="Remove event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="df948a78-9576-4df6-b7aa-4bdfcbac93f7" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6fbb1294-814b-4c26-a704-d5c0668b3531" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0ef3eef9-fb63-4d00-ac19-cc18fee59c9e" name="Remove event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="625b6eaf-5e61-469e-be6d-b3eafc904e74" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="504378cd-6a85-44e4-9ef7-ad86f117b8eb" />
+          </association>
+          <association Id="3cd53beb-dd29-4c3c-8752-69ed52e214aa" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Edit event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4aac58f2-b409-43ae-8e14-405c0b37779c" LastKnownName="Edit event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d1161322-03c9-41d2-969e-1117ef421792" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cb008134-05e3-4e85-b9eb-de799a381dab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24fc863b-7a87-4ffd-99e3-c8fec9ab56e8" name="Edit event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d62dc740-6e0a-48c0-8159-2843753b01a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3ef740cb-0dd1-4a2f-b414-99b930ab581b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b699158a-d41f-492e-a051-636e7b5c3ea6" name="Add event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a70ed261-2dd9-4323-9145-90093c30e6a1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="22a589e9-562e-437a-830b-bf1771947133" name="Remove event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c211d32a-537f-4933-9b62-fb17833c3b90" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4aac58f2-b409-43ae-8e14-405c0b37779c" name="Edit event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1bbad049-d644-4522-8bb5-f7e7b5e86258" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="20dcb16e-cc8a-4357-8e43-245985d55717" name="EventMaker" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0c6d6969-5861-4ca8-b584-9ed600cd2abf" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="1a04c5a4-683a-4356-91c3-055ae8aec645" name="SSD for Feb 14">
+    <elementDefinition Id="7e21a63e-11dc-4785-89d3-4c89b087f81c" />
+  </package>
+</useCaseModelRoot>

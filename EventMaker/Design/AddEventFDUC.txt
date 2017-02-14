@@ -1,0 +1,13 @@
+Use case name: Add event
+Scope: EventMaker
+Level: Adding new event to the list
+Primary Actor: User
+Stakeholders and Interests: Teachers, adding events functionality
+Preconditions: App started successfuly
+Success Guarantee: New event on the list
+Main Success Scenario: User opens app, presses add button, fills all fields on the page for creating new event and saves the event.
+Extensions: User opens app, presses add button but then he changes mind and presses the back button to return to the main page.
+Special Requirements: UWP app, serialization to JSON
+Technology and Data Variations List: None
+Frequency of Occurence: Based on the will of the user
+Miscellaneous: None

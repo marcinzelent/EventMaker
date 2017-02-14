@@ -1,0 +1,13 @@
+Use case name: Delete event
+Scope: EventMaker
+Level: Deleting event from the list
+Primary Actor: User
+Stakeholders and Interests: Teachers, deleting events functionality
+Preconditions: App started successfuly, there is at least one event on the list
+Success Guarantee: Deleted event not present on the list
+Main Success Scenario: User opens app and presses delete button on the chosen event.
+Extensions: None
+Special Requirements: UWP app, serialization to JSON
+Technology and Data Variations List: None
+Frequency of Occurence: Based on the will of the user
+Miscellaneous: None
