@@ -15,7 +15,7 @@ namespace EventMaker.ViewModel
         private static string _selectedSortValue = "date (ascending)";
         public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
         public static int SelectedEventIndex { get; set; }
-        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() {"date (ascending)","date (descending)"/*, "name (ascending)","name (descending)" ,"place (ascending)", "place (descending)"*/ };
+        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() {"date (ascending)","date (descending)", "name (ascending)","name (descending)" ,"place (ascending)", "place (descending)" };
         public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
         public static TimeSpan Time { get; set; }
         public ICommand CreateEventCommand { get; set; }
