@@ -6,7 +6,9 @@ Stakeholders and Interests: Marcin Zelent, extra functionality
 Preconditions: App started successfuly, there is at least one event on the list
 Success Guarantee: Previously created event's information changed
 Main Success Scenario: User opens app, presses edit button on the chosen event, changes information on the edit page and saves the event.
-Extensions: User opens app, presses edit button on the chosen event but then he changes mind and presses the back button to return to the main page.
+Extensions: 
+A. User opens app, presses edit button on the chosen event but then he changes mind and presses the back button to return to the main page.
+B. The name of event can't be longer than 20 characters.
 Special Requirements: UWP app, serialization to JSON
 Technology and Data Variations List: None
 Frequency of Occurence: Based on the will of the user

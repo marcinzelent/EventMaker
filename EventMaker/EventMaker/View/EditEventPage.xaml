@@ -21,7 +21,10 @@
                 VerticalAlignment="Center"
                 FontSize="50"
                 Text="Edit Event" />
-            <TextBox PlaceholderText="Name" Text="{Binding EventTemplate.Name, Mode=TwoWay}" />
+            <TextBox
+                MaxLength="20"
+                PlaceholderText="Name"
+                Text="{Binding EventTemplate.Name, Mode=TwoWay}" />
             <TextBox
                 MinHeight="64"
                 MaxHeight="320"
