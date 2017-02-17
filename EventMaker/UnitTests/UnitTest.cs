@@ -1,4 +1,6 @@
 ﻿using System;
+using Windows.UI.Popups;
+using EventMaker.Model;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
 namespace UnitTests
@@ -7,8 +9,10 @@ namespace UnitTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AddingTestMethod()
         {
+            EventCatalogSingleton eventCatalogSingleton = EventCatalogSingleton.Instance;
+            EventCatalogSingleton.Instance.Add(new Event() { Id = 1, Name = "Party", Description = "Best party ever!", Place = "Roskilde" });
         }
     }
 }

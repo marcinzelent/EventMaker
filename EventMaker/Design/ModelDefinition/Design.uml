@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="1bc1064b-b630-4768-9d3b-c772ca559686"
   name="Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -17,28 +17,617 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="9a643048-d3ee-43a5-ade8-477c72643dca"
+        name="User"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="352efa90-509c-4b98-9b6a-55465e854e93"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Add Event"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ac2ca0ad-98b3-4ad7-aca4-3ccced06fac0"
+              LastKnownName="Add Event"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b96544be-acbe-4f03-b77c-c1011f589895"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a6b7c114-636e-4e50-a5e8-65fc5c8bb3f8"
+                  name="Add Event"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a297e2b8-0f3a-4dcb-a372-1344237164a0"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Delete Event"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="34fe9ad6-9476-4810-874d-f0b32a7edcfb"
+              LastKnownName="Remove Event"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6b6ac8ff-16fd-466c-ab1f-630a2275a799"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c73041cd-db96-498d-bb02-7697d74a8753"
+                  name="Delete Event"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c288eadc-6e2c-4cbf-b714-71fe71c8adf9"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Edit Event"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e2749eb2-68f4-455b-a9fe-1496df4a16d1"
+              LastKnownName="Edit Event"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e1aaf0d0-0531-4478-9c3f-abdf6969ddf6"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b5066fa9-15e7-4f77-b59e-1694b48b54ad"
+                  name="Edit Event"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="a3847f80-dd1a-43bb-87eb-7a11b1ee9efd"
+        name="EventMaker"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ac2ca0ad-98b3-4ad7-aca4-3ccced06fac0"
+        name="Add Event"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a3847f80-dd1a-43bb-87eb-7a11b1ee9efd"
+            LastKnownName="EventMaker"
+            LastKnownLocation="Design.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="34fe9ad6-9476-4810-874d-f0b32a7edcfb"
+        name="Remove Event"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a3847f80-dd1a-43bb-87eb-7a11b1ee9efd"
+            LastKnownName="EventMaker"
+            LastKnownLocation="Design.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e2749eb2-68f4-455b-a9fe-1496df4a16d1"
+        name="Edit Event"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a3847f80-dd1a-43bb-87eb-7a11b1ee9efd"
+            LastKnownName="EventMaker"
+            LastKnownLocation="Design.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f2a5c36e-4dda-40b5-be83-a40c9cef4ee5"
+        name="User"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="fe702c99-6574-4c9f-a9d8-9615ca38f910"
+            isDerived="false"
+            sourceEndRoleName="starts"
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0521edc5-318b-41cb-85f8-5d2eae684049"
+              LastKnownName="EventMaker"
+              LastKnownLocation="Design.uml" />
+            <description>starts</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ac6019a6-5640-4614-8695-a63720287784"
+                  name="starts"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e42e4cc6-c549-4471-b4c0-6e6066facecd"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6158ade4-4ff5-4005-855f-07f6659d0b32"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="adds/removes/edits"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="760f646f-837b-4a99-aa04-8b3e628b4189"
+              LastKnownName="Event"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3c5e994e-3c63-46c5-b8ac-c18aaa77e966"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a5ac299-ca98-489f-b1e8-c3baeb109c42"
+                  name="adds/removes/edits"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0521edc5-318b-41cb-85f8-5d2eae684049"
+        name="EventMaker"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="922b9551-133c-4738-a534-96232a6b75e6"
+            isDerived="false"
+            sourceEndRoleName="has"
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b05f783-a502-4f77-9cf9-0ec043000cc3"
+              LastKnownName="Events"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ed704f5-e9c5-4371-a112-5fc1e8e8723b"
+                  name="has"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="16fbcfe4-8f47-4f9b-8a85-82fe44d78336"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0b05f783-a502-4f77-9cf9-0ec043000cc3"
+        name="Events"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="3da8f89b-e45f-4867-9a25-b2651513ef99"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="has"
+            isAbstract="false">
+            <classMoniker
+              Id="760f646f-837b-4a99-aa04-8b3e628b4189"
+              LastKnownName="Event"
+              LastKnownLocation="Design.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="23264486-1873-4a15-a42c-cd971e0c343d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="442ae296-6221-402b-8164-af5570963311"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d0e0ad6f-9a1e-446e-bdc9-19fff70067fb"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0a60aa17-b233-45c2-a2ca-1b010c837095"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="760f646f-837b-4a99-aa04-8b3e628b4189"
+        name="Event"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ad762b77-7cdd-4371-9d1f-432c26f4e17f"
+        LastKnownName="View"
+        LastKnownLocation="Package_1602.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="358ac318-0f16-4eab-b572-f608c0c29b70"
+        LastKnownName="ViewModel"
+        LastKnownLocation="Package1_1602.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="21ba117d-3182-4e3e-88c0-ffdce54960ca"
+        LastKnownName="Common"
+        LastKnownLocation="Package2_1602.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1149720f-a7d8-4f49-981f-3b9d965b1a6f"
+        LastKnownName="Model"
+        LastKnownLocation="Package3_1602.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4a8b3df8-0d36-4aab-9255-5551b0dab2a5"
+        LastKnownName="Persistency"
+        LastKnownLocation="Package_1603.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3b6965fa-e2eb-4c9e-8887-7dbf53077810"
+        name="INotifyPropertyChanged"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2d0aeb46-11c0-4531-a16d-e3abbf18c272"
+        name="ICommand"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="76fee8c1-e516-4ce6-8fec-7b707a51576a"
+        name="App"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="dd5fa978-2f68-474c-a284-e58f3fcb52d8"
+            name="App"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4037040b-3bdd-4194-88b9-ea24a855ee53"
+            name="OnLaunched"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b737cf9a-4de9-467f-b0e3-885ffc0f9548"
+                  name="LaunchActivatedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e5435ac0-ea69-429a-a936-1a0567e03d72"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a6a0d249-8da9-4895-a4e0-c53e74e2f1ce"
+            name="OnNavigationFailed"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9dda3c50-2edc-4c86-b819-022a27c5da62"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8ad72a5e-4175-468b-b438-31b9bf326e37"
+                  name="NavigationFailedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca93a5f7-e1ea-46b3-a2f7-9525f5764d95"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="467d0dbb-d268-4208-9c51-86a982f19efe"
+            name="OnNavigated"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7c86c08a-7024-419d-a8ff-ab560b0eacd7"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a28e23a1-4a0a-48bb-9bea-b5b1d21d2f99"
+                  name="NavigationEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9bc12ce7-8b21-4ab7-9910-acd4d4a2d639"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b3a41914-b5a4-4a44-8b18-4047f541ae52"
+            name="OnSuspending"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14b5e0e0-870d-4b49-8f0e-d8d0791ab571"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="90c29fac-47d5-49e1-918a-28faea7ee28d"
+                  name="SuspendingEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf080c14-c2ed-47c8-96aa-fe2f7bace290"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
     name="Integer"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
     name="Boolean"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
     name="String"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
     name="UnlimitedNatural"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
 </modelStoreModel>

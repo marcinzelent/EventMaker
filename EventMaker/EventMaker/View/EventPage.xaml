@@ -107,7 +107,7 @@
                             <Button
                                 Grid.Column="1"
                                 Click="SelectEvent"
-                                Command="{Binding DeleteEventCommand}"
+                                Command="{Binding RemoveEventCommand}"
                                 DataContext="{Binding ElementName=EventsList, Path=DataContext}"
                                 Style="{StaticResource ActionButtonStyle}">
                                 <SymbolIcon

@@ -25,10 +25,39 @@
     <Content Include="AddEventFDUC.txt">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="DeleteEventFDUC.txt">
+    <Content Include="RemoveEventFDUC.txt">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="DesignClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DesignClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DesignClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="DomainModel.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DomainModel.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DomainModel.classdiagram</DependentUpon>
+    </Content>
     <Content Include="EditEventFDUC.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1602.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1602.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1602.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1602.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1603.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="System.sequencediagram">
@@ -38,12 +67,15 @@
       <SubType>Content</SubType>
       <DependentUpon>System.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="UMLUseCaseDiagram.usecasediagram">
+    <Content Include="TestCases.txt">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UMLUseCaseDiagram.usecasediagram.layout">
+    <Content Include="UseCaseDiagram.usecasediagram">
       <SubType>Content</SubType>
-      <DependentUpon>UMLUseCaseDiagram.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UseCaseDiagram.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCaseDiagram.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Design.uml">

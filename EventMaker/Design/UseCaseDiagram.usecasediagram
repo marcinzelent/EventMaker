@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3509cc25-427e-4a79-b273-7537d04104ed" name="UseCaseDiagram" linkedPackageId="f13fe214-2007-4182-8bbc-4653c8768da6" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="2d551b2b-f47f-4deb-bc73-f9479510bef4">
+      <profileInstance Id="ce02bd3c-63d9-4805-bf16-04d28c2e3a90" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7fd1ce3f-c6cf-4f3b-bcb1-6db902bebf08">
+      <profileInstance Id="61b2e908-7c05-45d1-9e65-d42a4fafc187" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="2f1e3987-0b63-4137-8d06-d7dfdd6c678c" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9a643048-d3ee-43a5-ade8-477c72643dca" />
+        <targetEnds>
+          <association Id="87fe49fc-c415-47f8-a6f1-04f25d40eff7" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Add Event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9375dfdb-573d-42d0-a6d2-51d0ee372380" LastKnownName="Add Event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e8cd144-0c04-4a0f-bb8a-daf07effd889" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b96544be-acbe-4f03-b77c-c1011f589895" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="717d064f-159d-4e89-a68c-2fdc01a2a5fb" name="Add Event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a6b7c114-636e-4e50-a5e8-65fc5c8bb3f8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="352efa90-509c-4b98-9b6a-55465e854e93" />
+          </association>
+          <association Id="18df7472-4029-4c99-8f74-319b82f6ce9f" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Delete Event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f66cfc27-4cd6-45bd-a56a-4defbf2c2c2d" LastKnownName="Remove Event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b07b502-c03a-41bc-bce8-79c3aa89b843" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6b6ac8ff-16fd-466c-ab1f-630a2275a799" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="132717d3-f39c-433f-87e0-7815a40aa904" name="Delete Event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c73041cd-db96-498d-bb02-7697d74a8753" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a297e2b8-0f3a-4dcb-a372-1344237164a0" />
+          </association>
+          <association Id="67db3de4-64dd-40d3-a624-71c6921d1253" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Edit Event" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b93354b8-da10-4c60-9bf5-6cdb571d86d4" LastKnownName="Edit Event" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="994c05a1-6fc5-4db9-aec1-eae3064feac6" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e1aaf0d0-0531-4478-9c3f-abdf6969ddf6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5aa7e30d-e1fd-4a1d-9f02-1fc6ee0057f9" name="Edit Event" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b5066fa9-15e7-4f77-b59e-1694b48b54ad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c288eadc-6e2c-4cbf-b714-71fe71c8adf9" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d17c6939-93fc-4b10-be5b-77e11658ee77" name="EventMaker" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a3847f80-dd1a-43bb-87eb-7a11b1ee9efd" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="9375dfdb-573d-42d0-a6d2-51d0ee372380" name="Add Event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ac2ca0ad-98b3-4ad7-aca4-3ccced06fac0" />
+        <subjects>
+          <subsystemMoniker Id="d17c6939-93fc-4b10-be5b-77e11658ee77" LastKnownName="EventMaker" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f66cfc27-4cd6-45bd-a56a-4defbf2c2c2d" name="Remove Event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="34fe9ad6-9476-4810-874d-f0b32a7edcfb" />
+        <subjects>
+          <subsystemMoniker Id="d17c6939-93fc-4b10-be5b-77e11658ee77" LastKnownName="EventMaker" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b93354b8-da10-4c60-9bf5-6cdb571d86d4" name="Edit Event" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e2749eb2-68f4-455b-a9fe-1496df4a16d1" />
+        <subjects>
+          <subsystemMoniker Id="d17c6939-93fc-4b10-be5b-77e11658ee77" LastKnownName="EventMaker" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="f13fe214-2007-4182-8bbc-4653c8768da6" name="Design">
+    <elementDefinition Id="1bc1064b-b630-4768-9d3b-c772ca559686" />
+  </package>
+</useCaseModelRoot>

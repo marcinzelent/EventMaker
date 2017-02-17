@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Collections.ObjectModel;
 
 namespace EventMaker.Model
 {
     public class EventCatalogSingleton
     {
         private static EventCatalogSingleton _instance;
+        public ObservableCollection<Event> Events { get; set; }
 
         private EventCatalogSingleton()
         {
@@ -30,7 +27,7 @@ namespace EventMaker.Model
             Events.Add(newEvent);
             Persistency.PersistencyService.SaveEventsAsJsonAsync(Events);
         }
-        public async void LoadEventsAsync()
+        private async void LoadEventsAsync()
         {
             Events = await Persistency.PersistencyService.LoadEventsFromJsonAsync() ?? new ObservableCollection<Event>();
         }
@@ -141,8 +138,5 @@ namespace EventMaker.Model
             }
 
         }
-
-
-        public ObservableCollection<Event> Events { get; set; }
     }
 }

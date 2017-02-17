@@ -12,7 +12,7 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel MaxWidth="600">
+        <StackPanel x:Name="EventForm" MaxWidth="600">
             <StackPanel.Resources>
                 <Style BasedOn="{StaticResource TextBoxStyle}" TargetType="TextBox" />
             </StackPanel.Resources>
@@ -28,6 +28,7 @@
             <TextBox
                 MinHeight="64"
                 MaxHeight="320"
+                BorderBrush="#FF7A7A7A"
                 PlaceholderText="Description"
                 Text="{Binding EventTemplate.Description, Mode=TwoWay}"
                 TextWrapping="Wrap" />
@@ -43,6 +44,7 @@
             </StackPanel>
             <TextBox PlaceholderText="Place" Text="{Binding EventTemplate.Place, Mode=TwoWay}" />
             <Button
+                x:Name="AddButton"
                 Width="84"
                 Height="32"
                 Margin="0,0,10,0"

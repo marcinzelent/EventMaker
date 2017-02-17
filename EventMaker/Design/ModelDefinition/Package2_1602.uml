@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="21ba117d-3182-4e3e-88c0-ffdce54960ca"
+  name="Common" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="0f75337a-5b75-4de6-ba6a-5e6463dea3c3"
+        name="RelayCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7a109e49-c6bf-4b52-82ad-5f43f9dbb09f">
+            <interfaceMoniker
+              Id="2d0aeb46-11c0-4531-a16d-e3abbf18c272"
+              LastKnownName="ICommand"
+              LastKnownLocation="Design.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="76f0c407-9343-4f63-a655-8b5bd365ad55"
+            name="Action">
+            <classMoniker
+              Id="96c74342-4a89-464e-8bc5-8f2987f558ba"
+              LastKnownName="EventViewModel"
+              LastKnownLocation="Package1_1602.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="469b2dc5-2327-40fe-9a55-cc5a089c3313"
+            name="_execute"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="6d22eba6-59d1-4eef-98ab-48e42bfb5a51"
+                LastKnownName="Action"
+                LastKnownLocation="Package2_1602.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0bc75a53-5f59-42f3-8078-543e1c78e721"
+            name="_canExecute"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3c25f7f6-81b7-4037-9b7a-8190ea684ae7"
+                LastKnownName="Func&lt;bool&gt;"
+                LastKnownLocation="Package2_1602.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fa964049-ca1f-4afd-bb5e-e6e37fdfd110"
+            name="CanExecuteChanged"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3eed5444-d065-464f-952f-31c4212ee245"
+                LastKnownName="EventHandler"
+                LastKnownLocation="Package2_1602.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="70fd65b1-118b-48f1-b602-7dacea2f62cd"
+            name="RelayCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a726bd9e-f3dd-43e4-af18-6d067c2402b3"
+                  name="Action execute"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="588f4aa2-6e2e-43cc-8b4c-8915066c7b37"
+            name="RelayCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bfb093dc-80c0-441c-859d-e6e4a8ef24a2"
+                  name="Action execute"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2789f763-3a24-47c5-85a7-92158f8cad35"
+                  name="Func&lt;bool&gt; canExecute"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d9cc273d-a6f5-441e-8e0e-ea8e19b4a46c"
+            name="CanExecute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9bc42248-83d7-451c-9bf8-2f795f4b7c25"
+                  name="object parameter"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="05c0c804-173f-4320-b3a1-444beb77841b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="292fdac6-d6c5-4c4d-9fef-51ad4363b77f"
+                      LastKnownName="bool"
+                      LastKnownLocation="Package2_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f5e17be8-7183-4a31-af83-bdb6c3e8e8e8"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="99657e62-781d-4bae-a449-f8952e4a336f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f763c77f-b67c-4468-bb5f-9ae1520e2772"
+                  name="object parameter"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e53bf5e2-5eb9-4262-8d6f-189b76848a21"
+            name="RaiseCanExecuteChanged"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d771428-cb9a-45a5-817b-c87554ce1e72"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6d22eba6-59d1-4eef-98ab-48e42bfb5a51"
+        name="Action" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3c25f7f6-81b7-4037-9b7a-8190ea684ae7"
+        name="Func&lt;bool&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3eed5444-d065-464f-952f-31c4212ee245"
+        name="EventHandler" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="292fdac6-d6c5-4c4d-9fef-51ad4363b77f"
+        name="bool" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

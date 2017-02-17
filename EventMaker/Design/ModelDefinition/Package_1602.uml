@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="ad762b77-7cdd-4371-9d1f-432c26f4e17f"
+  name="View" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4884839a-4657-4128-85cc-bedfa8de4dae"
+        name="EventPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2a8cf7d5-097f-429c-9831-f21cf09ac306"
+            name="Command">
+            <classMoniker
+              Id="0f75337a-5b75-4de6-ba6a-5e6463dea3c3"
+              LastKnownName="RelayCommand"
+              LastKnownLocation="Package2_1602.uml" />
+            <description>Command</description>
+          </dependency>
+          <dependency
+            Id="118ed621-2b18-472f-ae94-67ba51f5656a"
+            name="DataContext">
+            <classMoniker
+              Id="96c74342-4a89-464e-8bc5-8f2987f558ba"
+              LastKnownName="EventViewModel"
+              LastKnownLocation="Package1_1602.uml" />
+          </dependency>
+          <dependency
+            Id="ee34d582-6d96-478d-99ca-6d689fbe8be3">
+            <classMoniker
+              Id="76fee8c1-e516-4ce6-8fec-7b707a51576a"
+              LastKnownName="App"
+              LastKnownLocation="Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="018ea98c-f0ac-4c12-8106-f02b5f62475d"
+            name="EventPage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="059a9fc9-d2db-41ee-ac81-a7202442620f"
+            name="SelectEvent"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c778745d-8d89-4ccb-9e52-a82fae32f5ea"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1937134-3b93-47a4-9c4e-a09663178645"
+                  name="RoutedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8743372d-de03-4658-bd01-8984c84fb386"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="afde00b4-5808-4a75-aa7a-931f3e8eb5da"
+        name="CreateEventPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="e834bde3-712e-4aa8-96c4-b0b835b97d73"
+            name="Command">
+            <classMoniker
+              Id="0f75337a-5b75-4de6-ba6a-5e6463dea3c3"
+              LastKnownName="RelayCommand"
+              LastKnownLocation="Package2_1602.uml" />
+          </dependency>
+          <dependency
+            Id="e9c87ab9-03df-4d35-9b7b-c0b202e37b41"
+            name="DataContext">
+            <classMoniker
+              Id="96c74342-4a89-464e-8bc5-8f2987f558ba"
+              LastKnownName="EventViewModel"
+              LastKnownLocation="Package1_1602.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="58f5987f-857f-4e83-a50c-0e7608b04a82"
+            name="_currentView"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0f05b53d-8037-417b-ae46-e2d163fc9815"
+                LastKnownName="SystemNavigationManager"
+                LastKnownLocation="Package_1602.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="164890a4-65e6-4102-ad2b-75668d41e4b7"
+            name="CreateEventPage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b204496e-b26b-41e1-b2ad-096465417399"
+            name="OnBackRequested"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3ea75370-7e0d-4719-a81f-3cdff9ff5c63"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bb4a7b91-c3c7-4d15-aea4-8322d9f42821"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7b4a4da8-e9b4-4042-b180-5d455b14605e"
+                  name="BackRequestedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5142c972-c289-406e-b361-88e719027440"
+            name="GoToEventPage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d81ee301-5829-49ea-b76a-65d05a147c1f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d1ec50e-87de-4597-bf32-b9d1bbed97a0"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="936bc1a2-b880-4c23-8070-640b40db3340"
+                  name="RoutedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6e416163-6bc9-45d7-b9db-fb6b07a376e0"
+        name="EditEventPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="df3dc418-d845-47d2-8694-62dbc936161b"
+            name="Command">
+            <classMoniker
+              Id="0f75337a-5b75-4de6-ba6a-5e6463dea3c3"
+              LastKnownName="RelayCommand"
+              LastKnownLocation="Package2_1602.uml" />
+          </dependency>
+          <dependency
+            Id="692d7a8f-a010-45dc-9283-82c5af586301"
+            name="DataContext">
+            <classMoniker
+              Id="96c74342-4a89-464e-8bc5-8f2987f558ba"
+              LastKnownName="EventViewModel"
+              LastKnownLocation="Package1_1602.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="98d2e86d-ade1-4c7b-9784-bf7490e303be"
+        name="SystemManager" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0f05b53d-8037-417b-ae46-e2d163fc9815"
+        name="SystemNavigationManager" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e7da482c-5262-41b8-b90f-5a95e6247815"
+        name="EditEventPage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="28a98f6b-2ea3-4cfe-b14f-7236d13a4610"
+            name="DataContext">
+            <classMoniker
+              Id="96c74342-4a89-464e-8bc5-8f2987f558ba"
+              LastKnownName="EventViewModel"
+              LastKnownLocation="Package1_1602.uml" />
+          </dependency>
+          <dependency
+            Id="99cfaae8-e791-4e6e-aa11-93f95c1cb8bf"
+            name="Command">
+            <classMoniker
+              Id="0f75337a-5b75-4de6-ba6a-5e6463dea3c3"
+              LastKnownName="RelayCommand"
+              LastKnownLocation="Package2_1602.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="992a08e9-7d22-46d2-b813-951e93d6e935"
+            name="_currentView"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0f05b53d-8037-417b-ae46-e2d163fc9815"
+                LastKnownName="SystemNavigationManager"
+                LastKnownLocation="Package_1602.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4acb612e-4c3a-40ad-b592-81b6508b49c6"
+            name="EditEventPage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d6b92d4d-7a76-449d-85f8-0f511cee9272"
+            name="OnBackRequested"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8c8beb72-40c7-449c-93ae-e9ff57b0f1fb"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="855fb2ef-6fa2-431c-b7fd-45e2072fb969"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cab90df5-e70c-4e6d-bdfa-cd9f066f421c"
+                  name="BackRequestedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5c3dd8a1-9cc3-411b-a50a-a45b7f6ac4e6"
+            name="GoToEventPage"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6579337c-a6b9-4cf6-acff-388fb78671b5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9252128a-7bb3-48e2-98e8-4300c8b4ab93"
+                  name="object sender"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca0b92a1-1c43-4306-8abb-a4285ad8115c"
+                  name="RoutedEventArgs e"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

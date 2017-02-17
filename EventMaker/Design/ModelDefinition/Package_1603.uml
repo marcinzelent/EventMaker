@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="4a8b3df8-0d36-4aab-9255-5551b0dab2a5"
+  name="Persistency" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e24997b3-5f32-4497-a60f-93999b077d06"
+        name="PersistencyService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="a934cefd-2485-4633-897c-b992c41f1833"
+            name="LocalFolder"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="87af12f8-4eb7-4bf4-84b8-a8094548f853"
+                LastKnownName="StorageFolder"
+                LastKnownLocation="Package_1603.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0f51c818-3fd2-4734-8ea8-67da5279b9cf"
+            name="_eventsFile"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7c9156c6-e162-4ac6-be32-91a76838ba4c"
+                LastKnownName="StorageFile"
+                LastKnownLocation="Package_1603.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4a6345cb-86c9-4667-b13d-bde8415348b6"
+            name="SaveEventsAsJsonAsync"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="918a055e-e798-4442-954d-ab0984f843e2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="841b9595-e179-47bc-844f-2015913066e4"
+                      LastKnownName="void"
+                      LastKnownLocation="Package3_1602.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="94fb9c52-6df8-4bd2-ba8e-2de6be2e185e"
+                  name="ObservableCollection&lt;Event&gt; events"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="cafbae54-3a04-45ed-ac50-3dc017f62298"
+            name="LoadEventsFromJsonAsync"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c8c0883b-0c9e-4700-af83-fd7fc1ea71bb"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0d0f8ba7-e48a-485b-95c3-404bb1ce30c4"
+                      LastKnownName="Task&lt;ObservableCollection&lt;Event&gt;&gt;"
+                      LastKnownLocation="Package_1603.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f0acb2e3-284e-41d1-8930-989ffbb34dda"
+        name="SorageFolder" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="87af12f8-4eb7-4bf4-84b8-a8094548f853"
+        name="StorageFolder" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7c9156c6-e162-4ac6-be32-91a76838ba4c"
+        name="StorageFile" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0d0f8ba7-e48a-485b-95c3-404bb1ce30c4"
+        name="Task&lt;ObservableCollection&lt;Event&gt;&gt;" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
