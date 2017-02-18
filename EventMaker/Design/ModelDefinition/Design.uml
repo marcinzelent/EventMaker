@@ -655,6 +655,24 @@
         Id="3b814457-889b-410e-aad3-6a62b7007f73"
         name="ExecutionEvent" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="4bb49608-7e4f-41a0-a13a-7cbf98c56062"
+        name="AddEvent"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <lifelines>
+          <lifeline
+            Id="2fafa649-d223-457d-bbd4-689ebd4880d9"
+            name="Lifeline1"
+            isActor="false"
+            lifelineDisplayName="Lifeline1" />
+        </lifelines>
+      </interaction>
+    </packageHasNamedElement>
   </packagedElements>
   <interaction
     Id="0b07700a-0cbb-442e-8283-77246f9c0075"

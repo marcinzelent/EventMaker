@@ -1,4 +1,4 @@
-Use case name: Adding event
+Use case name: Add event
 Scope: EventMaker
 Level: Adding new event to the list
 Primary Actor: User

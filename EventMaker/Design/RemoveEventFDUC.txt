@@ -1,4 +1,4 @@
-Use case name: Removing event
+Use case name: Remove event
 Scope: EventMaker
 Level: Remove event from the list
 Primary Actor: User
