@@ -12,8 +12,8 @@ namespace EventMaker.View
 
         private void SelectEvent(object sender, RoutedEventArgs e)
         {
-            var item = ((Grid)((Button)sender).Parent).DataContext;
-            var container = (ListViewItem)EventsList.ContainerFromItem(item);
+            var item = ((Grid) ((Button) sender).Parent).DataContext;
+            var container = (ListViewItem) EventsList.ContainerFromItem(item);
 
             container.IsSelected = true;
         }

@@ -1,4 +1,4 @@
-Use case name: Edit event
+Use case name: Editing event
 Scope: EventMaker
 Level: Editing existing events
 Primary Actor: User

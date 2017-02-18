@@ -9,12 +9,14 @@ namespace EventMaker.View
     public sealed partial class CreateEventPage
     {
         private readonly SystemNavigationManager _currentView = SystemNavigationManager.GetForCurrentView();
+
         public CreateEventPage()
         {
             InitializeComponent();
             _currentView.BackRequested += OnBackRequested;
             _currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
         }
+
         private void OnBackRequested(object sender, BackRequestedEventArgs e)
         {
             Frame.Navigate(typeof(EventPage));
@@ -23,16 +25,17 @@ namespace EventMaker.View
 
         private void GoToEventPage(object sender, RoutedEventArgs e)
         {
-            bool allFilled = true;
+            var allFilled = true;
             foreach (var control in EventForm.Children)
-            {
-                if (control is TextBox && string.IsNullOrWhiteSpace(((TextBox)control).Text))
+                if (control is TextBox && string.IsNullOrWhiteSpace(((TextBox) control).Text))
                 {
                     ((TextBox) control).BorderBrush = new SolidColorBrush(Colors.Red);
                     allFilled = false;
                 }
-                else if(control is TextBox)((TextBox)control).BorderBrush = new SolidColorBrush(Color.FromArgb(255,122,122,122));
-            }
+                else if (control is TextBox)
+                {
+                    ((TextBox) control).BorderBrush = new SolidColorBrush(Color.FromArgb(255, 122, 122, 122));
+                }
             if (allFilled)
             {
                 Frame.Navigate(typeof(EventPage));

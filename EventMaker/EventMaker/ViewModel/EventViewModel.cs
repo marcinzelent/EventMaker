@@ -2,10 +2,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using EventMaker.Model;
 using System.Windows.Input;
 using EventMaker.Annotations;
 using EventMaker.Common;
+using EventMaker.Model;
 
 namespace EventMaker.ViewModel
 {
@@ -13,9 +13,30 @@ namespace EventMaker.ViewModel
     {
         private static Event _eventTemplate = new Event();
         private static string _selectedSortValue = "date (ascending)";
+
+        public EventViewModel()
+        {
+            CreateEventCommand = new RelayCommand(CreateEvent);
+            RemoveEventCommand = new RelayCommand(RemoveEvent);
+            LoadEventCommand = new RelayCommand(LoadEvent);
+            UpdateEventCommand = new RelayCommand(UpdateEvent);
+            CleanTemplateCommand = new RelayCommand(CleanTemplate);
+            SortEvents();
+        }
+
         public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
         public static int SelectedEventIndex { get; set; }
-        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>() { "date (ascending)", "date (descending)", "name (ascending)", "name (descending)", "place (ascending)", "place (descending)" };
+
+        public static ObservableCollection<string> SortValues { get; set; } = new ObservableCollection<string>
+        {
+            "date (ascending)",
+            "date (descending)",
+            "name (ascending)",
+            "name (descending)",
+            "place (ascending)",
+            "place (descending)"
+        };
+
         public static DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
         public static TimeSpan Time { get; set; }
         public ICommand CreateEventCommand { get; set; }
@@ -45,22 +66,15 @@ namespace EventMaker.ViewModel
             }
         }
 
-        public EventViewModel()
-        {
-            CreateEventCommand = new RelayCommand(CreateEvent);
-            RemoveEventCommand = new RelayCommand(RemoveEvent);
-            LoadEventCommand = new RelayCommand(LoadEvent);
-            UpdateEventCommand = new RelayCommand(UpdateEvent);
-            CleanTemplateCommand = new RelayCommand(CleanTemplate);
-            SortEvents();
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void CreateEvent()
         {
             if (string.IsNullOrWhiteSpace(EventTemplate.Name) || string.IsNullOrWhiteSpace(EventTemplate.Description) ||
                 string.IsNullOrWhiteSpace(EventTemplate.Place)) return;
             EventTemplate.Id = (int) (DateTime.Now - new DateTime(1970, 01, 01, 0, 0, 0)).TotalSeconds;
-            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
+            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes,
+                Time.Seconds);
             EventCatalogSingleton.Add(EventTemplate);
             CleanTemplate();
             SortEvents();
@@ -85,7 +99,8 @@ namespace EventMaker.ViewModel
         {
             if (string.IsNullOrWhiteSpace(EventTemplate.Name) || string.IsNullOrWhiteSpace(EventTemplate.Description) ||
                 string.IsNullOrWhiteSpace(EventTemplate.Place)) return;
-            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, Time.Seconds);
+            EventTemplate.DateTime = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes,
+                Time.Seconds);
             EventCatalogSingleton.Update(SelectedEventIndex, EventTemplate);
             CleanTemplate();
         }
@@ -102,8 +117,6 @@ namespace EventMaker.ViewModel
             EventCatalogSingleton.Sort(SelectedSortValue);
             OnPropertyChanged(nameof(EventCatalogSingleton));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

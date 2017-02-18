@@ -22,10 +22,24 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="AddEventFDUC.txt">
+    <Content Include="AddingEvent.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RemoveEventFDUC.txt">
+    <Content Include="AddingEvent.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AddingEvent.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="AddingEventFDUC.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RemovingEvent.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RemovingEvent.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RemovingEvent.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RemovingEventFDUC.txt">
       <SubType>Content</SubType>
     </Content>
     <Content Include="DesignClassDiagram.classdiagram">
@@ -42,7 +56,7 @@
       <SubType>Content</SubType>
       <DependentUpon>DomainModel.classdiagram</DependentUpon>
     </Content>
-    <Content Include="EditEventFDUC.txt">
+    <Content Include="EditingEventFDUC.txt">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_1602.uml">
@@ -59,13 +73,6 @@
     </Content>
     <Content Include="ModelDefinition\Package_1603.uml">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="System.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="System.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>System.sequencediagram</DependentUpon>
     </Content>
     <Content Include="TestCases.txt">
       <SubType>Content</SubType>
