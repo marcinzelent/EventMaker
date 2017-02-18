@@ -32,6 +32,20 @@
     <Content Include="AddEventFDUC.txt">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="EditEvent.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EditEvent.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EditEvent.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="EditEventSystem.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EditEventSystem.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EditEventSystem.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="RemoveEvent.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -74,12 +88,19 @@
     <Content Include="ModelDefinition\Package_1603.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="System Sequence.sequencediagram">
+    <Content Include="AddEventSystem.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="System Sequence.sequencediagram.layout">
+    <Content Include="AddEventSystem.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>System Sequence.sequencediagram</DependentUpon>
+      <DependentUpon>AddEventSystem.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="RemoveEventSystem.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RemoveEventSystem.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RemoveEventSystem.sequencediagram</DependentUpon>
     </Content>
     <Content Include="TestCases.txt">
       <SubType>Content</SubType>

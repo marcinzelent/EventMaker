@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="81de8f1f-e199-4c3b-a607-27bb5bdab314" name="AddEvent" linkedPackageId="385ee7fc-2111-4253-bfc3-59543fe5ec40" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="81de8f1f-e199-4c3b-a607-27bb5bdab314" name="AddEvent" linkedPackageId="385ee7fc-2111-4253-bfc3-59543fe5ec40" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="829162e3-d7f4-4228-993c-157ac2929de0" name="AddEvent" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -127,16 +127,16 @@
               <lifelineMoniker Id="355b9cce-8145-4c1a-8af3-4c0a75c82de7" LastKnownName=": EventViewModel" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="40723156-6cad-4f09-b33b-278e7ef868cd" name="MessageOccurrenceSpecification6">
-            <elementDefinition Id="5b69688c-684f-4670-b3ea-768c015a9f80" />
-            <covered>
-              <lifelineMoniker Id="355b9cce-8145-4c1a-8af3-4c0a75c82de7" LastKnownName=": EventViewModel" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="427c6c2a-7103-407b-8884-96aecbec4039" name="MessageOccurrenceSpecification5">
             <elementDefinition Id="1b35d87d-3e7b-4f16-8a29-ca1e13519be8" />
             <covered>
               <lifelineMoniker Id="fc5d871e-33d4-4479-9963-2d93b8297948" LastKnownName=": RelayCommand" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="40723156-6cad-4f09-b33b-278e7ef868cd" name="MessageOccurrenceSpecification6">
+            <elementDefinition Id="5b69688c-684f-4670-b3ea-768c015a9f80" />
+            <covered>
+              <lifelineMoniker Id="355b9cce-8145-4c1a-8af3-4c0a75c82de7" LastKnownName=": EventViewModel" />
             </covered>
           </messageOccurrenceSpecification>
           <behaviorExecutionSpecification Id="583c1102-86db-4ea8-b1fe-266f282e8101" name="BehaviorExecutionSpecification4">

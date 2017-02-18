@@ -103,6 +103,7 @@ namespace EventMaker.ViewModel
                 Time.Seconds);
             EventCatalogSingleton.Update(SelectedEventIndex, EventTemplate);
             CleanTemplate();
+            SortEvents();
         }
 
         private void CleanTemplate()
