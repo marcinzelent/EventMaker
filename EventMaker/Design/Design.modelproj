@@ -102,6 +102,13 @@
       <SubType>Content</SubType>
       <DependentUpon>RemoveEventSystem.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Startup.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Startup.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Startup.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="TestCases.txt">
       <SubType>Content</SubType>
     </Content>
