@@ -2,3 +2,8 @@ Test Scenario: Adding event with empty property
 Tests Steps: User opens app, presses add button, gets taken to the page for creating events, tries to add event without filling one or more fields.
 Expected Result: User is being prevented from adding the event.
 Actual Result: User successfully adds the event with some empty properties.
+
+Test Scenario: Editing event should save the changes
+Tests Steps: User opens app, presses edit button next to event, gets taken to the page for editing events, makes changes, presses save button.
+Expected Result: Changes made to event are saved.
+Actual Result: Same as expected.
