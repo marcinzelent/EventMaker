@@ -21,7 +21,6 @@ namespace EventMaker.ViewModel
             LoadEventCommand = new RelayCommand(LoadEvent);
             UpdateEventCommand = new RelayCommand(UpdateEvent);
             CleanTemplateCommand = new RelayCommand(CleanTemplate);
-            SortEvents();
         }
 
         public EventCatalogSingleton EventCatalogSingleton { get; set; } = EventCatalogSingleton.Instance;
