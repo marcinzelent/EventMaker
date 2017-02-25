@@ -74,7 +74,7 @@ namespace EventMaker.Model
                     {
                         sorted = false;
                         for (var i = 0; i < Events.Count - 1; i++)
-                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) >= 0)
+                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) > 0)
                             {
                                 Events.Move(i, i + 1);
                                 sorted = true;
@@ -87,7 +87,7 @@ namespace EventMaker.Model
                     {
                         sorted = false;
                         for (var i = 0; i < Events.Count - 1; i++)
-                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) <= 0)
+                            if (string.CompareOrdinal(Events[i].Name, Events[i + 1].Name) < 0)
                             {
                                 Events.Move(i, i + 1);
                                 sorted = true;
@@ -100,7 +100,7 @@ namespace EventMaker.Model
                     {
                         sorted = false;
                         for (var i = 0; i < Events.Count - 1; i++)
-                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) >= 0)
+                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) > 0)
                             {
                                 Events.Move(i, i + 1);
                                 sorted = true;
@@ -113,7 +113,7 @@ namespace EventMaker.Model
                     {
                         sorted = false;
                         for (var i = 0; i < Events.Count - 1; i++)
-                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) <= 0)
+                            if (string.CompareOrdinal(Events[i].Place, Events[i + 1].Place) < 0)
                             {
                                 Events.Move(i, i + 1);
                                 sorted = true;
